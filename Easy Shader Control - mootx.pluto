@@ -1,0 +1,617 @@
+
+local moot = menu
+local mootlist = moot.list
+local scwiptname = "Easy Shader Control"
+local chunkyroot = moot.list(moot.my_root(), scwiptname, {"mootxshaderlist"}, "", function()
+ util.toast("made by mootx on discord")
+end)
+--mootx
+moot.toggle(chunkyroot, "Pink Fog", {"pinkfog"}, "", function(poggies)
+ if poggies then 
+  moot.trigger_commands("shader michealspliff")
+ else
+  moot.trigger_commands("shader off")
+ end
+end)
+--mootx
+moot.toggle(chunkyroot, "PS3 Mode", {"ps3mode"}, "You will gain more fps using this", function(poggies)
+ if poggies then 
+  moot.trigger_commands("shader newmpgaragel")
+ else
+  moot.trigger_commands("shader off")
+ end
+end)
+--mootx
+moot.toggle(chunkyroot, "Very High Saturation", {"vhighsat"}, "", function(poggies)
+ if poggies then 
+  moot.trigger_commands("shader rplysaturation")
+ else
+  moot.trigger_commands("shader off")
+ end
+end)
+--mootx
+moot.toggle(chunkyroot, "High Contrast", {"highcon"}, "", function(poggies)
+ if poggies then 
+  moot.trigger_commands("shader hintcam")
+ else
+  moot.trigger_commands("shader off")
+ end
+end)
+--mootx
+moot.toggle(chunkyroot, "Very High Contrast", {"vhighcon"}, "", function(poggies)
+ if poggies then 
+  moot.trigger_commands("shader rplycontrast")
+ else
+  moot.trigger_commands("shader off")
+ end
+end)
+--mootx
+moot.toggle(chunkyroot, "Night Vision", {"nitevis"}, "", function(poggies)
+ if poggies then 
+  moot.trigger_commands("shader blacknwhite")
+ else
+  moot.trigger_commands("shader off")
+ end
+end)
+--mootx
+moot.toggle(chunkyroot, "Low Spec Mode", {"lowspecmode"}, "", function(poggies)
+ if poggies then 
+  moot.trigger_commands("shader vsolomons")
+ else
+  moot.trigger_commands("shader off")
+ end
+end)
+--mootx
+moot.toggle(chunkyroot, "No Fog", {"nofog"}, "", function(poggies)
+ if poggies then 
+  moot.trigger_commands("shader intnofogalpha")
+ else
+  moot.trigger_commands("shader off")
+ end
+end)
+--mootx
+moot.toggle(chunkyroot, "No Water", {"nowater"}, "", function(poggies)
+ if poggies then 
+  moot.trigger_commands("shader prologueshootoutopt")
+ else
+  moot.trigger_commands("shader off")
+ end
+end)
+--mootx
+moot.toggle(chunkyroot, "Scarecrow", {"scarecrow"}, "", function(poggies)
+ if poggies then 
+  moot.trigger_commands("shader mparenathemesandstorm")
+ else
+  moot.trigger_commands("shader off")
+ end
+end)
+--mootx
+moot.toggle(chunkyroot, "Fart City", {"fartcity"}, "", function(poggies)
+ if poggies then 
+  moot.trigger_commands("shader mparenathemetoxic")
+  moot.trigger_commands("weather halloween")
+ else
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(chunkyroot, "Scary Mode", {"scarymode"}, "", function(poggies)
+ if poggies then 
+  moot.trigger_commands("shader metrotunnels")
+  moot.trigger_commands("weather halloween")
+  moot.trigger_commands("time 1")
+  moot.trigger_commands("locktime on")
+ else
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+local aestlist = mootlist(chunkyroot, "Aesthetic Filters", {"aestheticlist"}, "", function()
+end)
+--mootx
+local randaestlist = mootlist(aestlist, "More Aesthetic Filters", {"aestheticlist"}, "aesthetic filters I had no name for", function()
+end)
+--mootx
+moot.toggle(randaestlist, "Aesthetic 1", {"randaes1"}, "", function(poggies)
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader mpbkrware02upgrade")
+ else
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(aestlist, "No Fog Aesthetic", {"nofogaes"}, "", function(poggies)
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader intnofogalpha")
+ else
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(aestlist, "Yellow Aesthetic", {"yellowaes"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader vagossplash")
+  moot.trigger_commands("aestheticcolourred 255")
+  moot.trigger_commands("aestheticcolourgreen 235")
+  moot.trigger_commands("aestheticcolourblue 25")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+local greenlist = mootlist(aestlist, "Green Aesthetic", {}, "", function()
+end)
+--mootx
+moot.toggle(greenlist, "Green Aesthetic 1", {"greenaes1"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader glassesgreen")
+  moot.trigger_commands("aestheticcolourred 15")
+  moot.trigger_commands("aestheticcolourgreen 255")
+  moot.trigger_commands("aestheticcolourblue 25")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(greenlist, "Green Aesthetic 2", {"greenaes2"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader drugflying01")
+  moot.trigger_commands("aestheticcolourred 15")
+  moot.trigger_commands("aestheticcolourgreen 255")
+  moot.trigger_commands("aestheticcolourblue 25")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(aestlist, "Red Aesthetic", {"redaes"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader glassesred")
+  moot.trigger_commands("aestheticcolourred 255")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 25")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+local bluelist = mootlist(aestlist, "Blue Aesthetic", {}, "", function()
+end)
+--mootx
+moot.toggle(bluelist, "Blue Aesthetic 1", {"blueaes1"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader glassesdarkblue")
+  moot.trigger_commands("aestheticcolourred 25")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 255")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(bluelist, "Blue Aesthetic 2", {"blueaes2"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader mparenathemeatlantis")
+  moot.trigger_commands("aestheticcolourred 25")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 255")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(bluelist, "Blue Aesthetic 3", {"blueaes3"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader casinomainfloorheist")
+  moot.trigger_commands("aestheticcolourred 25")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 255")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(bluelist, "Blue Aesthetic 4", {"blueaes4"}, "Get to high ground before using this one", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  util.toast("if you can't see, you're too low and need to get to higher ground")
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader mparenathemesaccharine")
+  moot.trigger_commands("aestheticcolourred 25")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 255")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(bluelist, "Blue Aesthetic 5", {"blueaes5"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader weaponupgrade")
+  moot.trigger_commands("aestheticcolourred 25")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 255")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(aestlist, "Cyan Aesthetic", {"cyanaes"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader smugglercheckpoint02")
+  moot.trigger_commands("aestheticcolourred 25")
+  moot.trigger_commands("aestheticcolourgreen 200")
+  moot.trigger_commands("aestheticcolourblue 255")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+local purplelist = mootlist(aestlist, "Purple Aesthetic", {}, "", function()
+end)
+--mootx
+moot.toggle(purplelist, "Purple Aesthetic 1", {"purpaes1"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader glassespurple")
+  moot.trigger_commands("aestheticcolourred 225")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 255")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(purplelist, "Purple Aesthetic 2", {"purpaes2"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader kifflom")
+  moot.trigger_commands("aestheticcolourred 195")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 255")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(purplelist, "Purple Aesthetic 3", {"purpaes3"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader pppurple01")
+  moot.trigger_commands("aestheticcolourred 195")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 255")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(purplelist, "Purple Aesthetic 4", {"purpaes4"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader inchpurple01")
+  moot.trigger_commands("aestheticcolourred 195")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 255")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+local pinklist = mootlist(aestlist, "Pink Aesthetic", {}, "", function()
+end)
+--mootx
+moot.toggle(pinklist, "Pink Aesthetic 1", {"pinkaes1"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader glassespink")
+  moot.trigger_commands("aestheticcolourred 255")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 255")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(pinklist, "Pink Aesthetic 2", {"pinkaes2"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader pppink02")
+  moot.trigger_commands("aestheticcolourred 255")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 255")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(pinklist, "Pink Aesthetic 3", {"pinkaes3"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader drugflying02")
+  moot.trigger_commands("aestheticcolourred 255")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 255")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 5")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+local mixedcolorlist = mootlist(aestlist, "Mixed Colors", {}, "", function()
+end)
+--mootx
+moot.toggle(mixedcolorlist, "Pink And Blue", {"pinkandblueaes"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader glassespink")
+  moot.trigger_commands("aestheticcolourred 0")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 255")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 8")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
+--mootx
+moot.toggle(mixedcolorlist, "Blue And Pink", {"blueandpinkaes"}, "", function(poggies)
+ local aeslight = moot.ref_by_path('World>Aesthetic Light>Aesthetic Light')
+ local aeslight2 = moot.ref_by_path('World>Aesthetic Light>Placement')
+ if poggies then 
+  moot.trigger_commands("time 19")
+  moot.trigger_commands("locktime on")
+  moot.trigger_commands("weather snowlight")
+  moot.trigger_commands("shader glassesdarkblue")
+  moot.trigger_commands("aestheticcolourred 255")
+  moot.trigger_commands("aestheticcolourgreen 0")
+  moot.trigger_commands("aestheticcolourblue 145")
+  moot.trigger_commands("aestheticrange 7500")
+  moot.trigger_commands("aestheticintensity 9")
+  moot.set_value(aeslight, true)
+  moot.set_value(aeslight2, 1)
+ else
+  moot.set_value(aeslight, false)
+  moot.trigger_commands("locktime off")
+  moot.trigger_commands("syncclock")
+  moot.trigger_commands("shader off")
+  moot.trigger_commands("weather normal")
+ end
+end)
